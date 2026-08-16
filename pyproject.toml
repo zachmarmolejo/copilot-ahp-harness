@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "copilot-ahp-harness"
+version = "0.1.0"
+description = "A small external Python client for VS Code's Agent Host Protocol"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "websockets>=14,<16",
+]
+
+[project.scripts]
+copilot-ahp = "copilot_ahp.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/copilot_ahp"]
